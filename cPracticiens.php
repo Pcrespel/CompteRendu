@@ -12,51 +12,24 @@
  
 
 <?php
-  $repInclude = './include/';
-  require($repInclude . "_init.inc.php");
-
- 
-
- 
-
- 
-
-  // page inaccessible si visiteur non connecté
-  if ( !estVisiteurConnecte() ) 
-  {
-    header("Location: cSeConnecter.php");  
-  }
-  require($repInclude . "_entete.inc.html");
-  require($repInclude . "_sommaire.inc.php");
-
- 
-
- 
-
- 
+      $repInclude = './include/';
+      require($repInclude . "_init.inc.php");
+      // page inaccessible si visiteur non connecté
+      if ( !estVisiteurConnecte() )
+      {
+          header("Location: cSeConnecter.php");
+      }
+      require($repInclude . "_entete.inc.html");
+      require($repInclude . "_sommaire.inc.php");
 
 
-  $req = "SELECT *
-          FROM praticien";
+      $req = "SELECT nom,prenom,coeffNota,lieuExercise
+              FROM praticien";
 
- 
-
- 
-
- 
-
-
-$listeUser = mysqli_query($idConnexion, $req);
-$donnees = mysqli_fetch_row($listeUser);
-$result = $idConnexion->query($req);
+    $listeUser = mysqli_query($idConnexion, $req);
+    $donnees = mysqli_fetch_row($listeUser);
+    $result = $idConnexion->query($req);
 ?>
-
- 
-
- 
- 
-
- 
 
   <!-- Division principale -->
 <div id="contenu">
@@ -82,9 +55,6 @@ $result = $idConnexion->query($req);
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
-            <th style="text-align: center" scope="col">Adresse</th>
-            <th style="text-align: center" scope="col">CP</th>
-            <th scope="col">Ville</th>
             <th scope="col">Coeff</th>
             <th scope="col">Lieu</th>
         </tr>
@@ -102,9 +72,6 @@ $result = $idConnexion->query($req);
                         $userN = $donnees["nom"];
                         $userP = $donnees["prenom"];
                         $userID = $donnees["idPract"];
-                        $userA = $donnees["adresse"];
-                        $userT = $donnees["cp"];
-                        $userZ = $donnees["ville"];
                         $userE = $donnees["coeffNota"];
                         $userR = $donnees["lieuExercise"];
 ?>

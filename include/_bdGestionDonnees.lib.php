@@ -360,4 +360,18 @@ function modifierEtatFicheFrais($idCnx, $unMois, $unIdVisiteur, $unEtat) {
                $unIdVisiteur . "' and mois = '". $unMois . "'";
     mysqli_query($idCnx,$requete);
 }             
+
+
+function obtenirDetailCabinet($idCnx, $unId) {
+$id = filtrerChainePourBD($idCnx,$unId);
+$requete = "select id, adresse, ville, cp, nom from cabinet";
+$idJeuRes = mysqli_query($idCnx,$requete);
+$ligne = false;
+if ( $idJeuRes ) {
+$ligne = mysqli_fetch_assoc($idJeuRes);
+mysqli_free_result($idJeuRes);
+}
+return $ligne ;
+}
+
 ?>

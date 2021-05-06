@@ -63,6 +63,12 @@
          <li class="smenu">
             <a href="cMedicaments.php" title="Voir Comptes-rendus">Medicaments</a>
          </li>
+         <li class="smenu">
+            <a href="cSaisieCabinet.php" title="Voir Comptes-rendus">Créer un cabinet</a>
+         </li>
+         <li class="smenu">
+            <a href="cAssocierCabinet.php" title="Associer Cabinet">Associer un praticien au cabinet</a>
+         </li>
    <?php 
       }
       else if($_SESSION["numPoste"] == 1) { ?>
@@ -73,8 +79,9 @@
             <a href="cSuiviePaiement.php" title="Suivre Paiements Fiches de Frais"> Suivre Paiements Fiches de Frais </a>
          </li>
          <li class="smenu">
-            <a href="cVoirComptesRendus.php" title="Voir Comptes-rendus">Voir Comptes-rendus</a>
+              <a href="cVoirComptesRendus.php" title="Voir Comptes-rendus">Voir Comptes-rendus</a>
          </li>
+
 <?php }
           // affichage des éventuelles erreurs déjà détectées
             if ( nbErreurs($tabErreurs) > 0 ) {

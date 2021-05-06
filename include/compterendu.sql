@@ -344,6 +344,7 @@ CREATE TABLE IF NOT EXISTS `praticien` (
 INSERT INTO `praticien` (`idPract`, `nom`, `prenom`, `adresse`, `ville`, `cp`, `coeffNota`, `lieuExercise`) VALUES
 (1, 'Forax', 'Thomas', '6bis Rue du Petit Pont', 'Douai', 59500, 13, 'Douai'),
 (2, 'OffSpring', 'Jack', '12 Rue de la Girouette', 'Mâcon', 71000, 12, 'Mâcon');
+(3, 'Crespel', 'Pierre', '6 rue du Ponterlant', 'Avion', 62210, 12, 'Avion');
 
 -- --------------------------------------------------------
 
